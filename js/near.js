@@ -55,8 +55,10 @@ function draw() {
 function keyPressed() {
   prevKc = kc;
   kc = keyCode;
-  beams[currentBeam].launch(kc, "near");
-  currentBeam += 1;
+  if (kc != 13){
+    beams[currentBeam].launch(kc, "near");
+    currentBeam += 1;
+  }
   if (currentBeam >= beamNum){
     currentBeam = 0;
   }
